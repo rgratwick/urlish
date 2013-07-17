@@ -1,18 +1,18 @@
 # encoding: utf-8
 require 'spec_helper'
-describe UrlFormatter do
+describe Urlish do
   describe ".format_url" do
     it "adds http:// to a URL if not provided" do
-      UrlFormatter.format_url("example.com").should eq("http://example.com")
+      Urlish.format_url("example.com").should eq("http://example.com")
     end
 
     it "does not add http:// to a URL if already provided" do
-      UrlFormatter.format_url("http://example.com").should eq("http://example.com")
+      Urlish.format_url("http://example.com").should eq("http://example.com")
     end
 
     it "returns an invalid URL unchanged" do
-      UrlFormatter.format_url("foo bar").should eq("foo bar")
-      UrlFormatter.format_url(nil).should eq(nil)
+      Urlish.format_url("foo bar").should eq("foo bar")
+      Urlish.format_url(nil).should eq(nil)
     end
   end
 
@@ -31,7 +31,7 @@ describe UrlFormatter do
         'http://1.2.3.4:8080',
         'http://ütf8.com',
       ].each do |url|
-        url.should match(UrlFormatter.url_regexp)
+        url.should match(Urlish.url_regexp)
       end
     end
 
@@ -45,7 +45,7 @@ describe UrlFormatter do
         "http://example", # technically valid but not what we want from user
         "other://example.com", # we also don't want other protocols
       ].each do |url|
-        url.should_not match(UrlFormatter.url_regexp)
+        url.should_not match(Urlish.url_regexp)
       end
     end
   end

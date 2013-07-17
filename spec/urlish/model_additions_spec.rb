@@ -2,11 +2,11 @@ require 'spec_helper'
 
 class Comment < SuperModel::Base
   include ActiveModel::Validations::Callbacks
-  extend UrlFormatter::ModelAdditions
+  extend Urlish::ModelAdditions
   format_url :website
 end
 
-describe UrlFormatter::ModelAdditions do
+describe Urlish::ModelAdditions do
   it "adds http:// to URL upon saving" do
     Comment.create!(website: "example.com").website.should eq("http://example.com")
     Comment.create!(website: "http://example.com").website.should eq("http://example.com")

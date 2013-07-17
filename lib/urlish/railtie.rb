@@ -1,6 +1,6 @@
 module UrlFormatter
   class Railtie < Rails::Railtie
-    initializer 'url_formatter.model_additions' do
+    initializer 'urlish.model_additions' do
       ActiveSupport.on_load :active_record do
         extend ModelAdditions
       end

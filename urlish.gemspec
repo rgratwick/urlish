@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'url_formatter/version'
+require 'urlish/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "url_formatter"
-  spec.version       = UrlFormatter::VERSION
+  spec.name          = "urlish"
+  spec.version       = Urlish::VERSION
   spec.authors       = ["Robert Gratwick"]
   spec.email         = ["rgratwick@gmail.com"]
   spec.description   = %q{Testing a gem description}
   spec.summary       = %q{Testing a gem summary}
-  spec.homepage      = "http://github.com/rgratwick/url_formatter"
+  spec.homepage      = "http://github.com/rgratwick/urlish"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

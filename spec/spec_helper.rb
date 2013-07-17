@@ -1,2 +1,2 @@
-require 'url_formatter'
+require 'urlish'
 require 'supermodel'

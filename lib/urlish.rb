@@ -1,8 +1,8 @@
-require "url_formatter/version"
-require "url_formatter/model_additions"
-require "url_formatter/railtie" if defined? Rails
+require "urlish/version"
+require "urlish/model_additions"
+require "urlish/railtie" if defined? Rails
 
-module UrlFormatter
+module Urlish
   def self.format_url(url)
     if url.to_s !~ url_regexp && "http://#{url}" =~ url_regexp
       "http://#{url}"
